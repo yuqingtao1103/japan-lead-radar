@@ -1,0 +1,30 @@
+# Project instructions for the AI assistant (kept local)
+CLAUDE.md
+
+# Secrets
+.streamlit/secrets.toml
+.env
+.env.*
+*.pem
+*.key
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Data (rebuild with scripts in scripts/)
+data/raw/
+data/cache/
+*.parquet
+*.sqlite
+*.db
+*.zip
+*.csv
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

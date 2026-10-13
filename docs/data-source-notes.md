@@ -213,6 +213,11 @@ Source: https://www.houjin-bangou.nta.go.jp/pc/download/images/k-resource-dl.pdf
 - **Columns:** ＥＤＩＮＥＴコード, 提出者種別, 上場区分, 連結の有無, 資本金, 決算日, 提出者名, 提出者名（英字）, 提出者名（ヨミ）, 所在地, 提出者業種, 証券コード, 提出者法人番号.
 - This tells us which corporate numbers are listed, and their TSE-style industry. The unit of 資本金 is **Not confirmed**; samples suggest millions of yen.
 
+Downloaded on 2026-10-13 with `scripts/download_edinet_codelist.py`, saved as `data/edinet_codelist.parquet` (git-ignored):
+- **Records:** 11,414 in total. 3,811 are listed domestic companies (上場, 内国法人・組合), and 3,809 of those have a corporate number.
+- **Listed manufacturers nationwide:** 1,397 (the 16 TSE manufacturing sectors). The largest sectors are 電気機器 (230), 機械 (213), 化学 (201) and 食料品 (125).
+- **`所在地` usually omits the prefecture** (for example 「中央区日本橋…」 or 「横浜市都筑区…」). Only 42 of 3,811 addresses start with a prefecture name. Prefecture must come from joining on the corporate number with gBizINFO or NTA data, not from this column.
+
 ### Rate limits
 - No number published. HTTP 429 means too many requests.
 - The FAQ suggests polling the list at most once a minute. Mass access in a short time is prohibited, and access can be restricted by IP.
